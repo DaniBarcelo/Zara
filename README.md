@@ -6,7 +6,7 @@ Se consideró la posibilidad de que la API devolviera solo la información neces
 
 ## Estructura del Proyecto
 
-
+```
 proyecto-marvel-zara/
 ├── backend-zara/ # Código del servidor Node.js
 │ ├── src/
@@ -17,16 +17,18 @@ proyecto-marvel-zara/
 │ └── package.json
 ├── README.md # Documentación del proyecto
 └── package.json # Archivo principal de configuración del proyecto
-
+```
 
 ## Cómo Ejecutar
 
 ### Backend
 Para ejecutar el servidor Node.js, sigue estos pasos:
 1. Navega al directorio del backend: `cd backend-zara`
-2. Inicia el servidor: `npm start`
+2. Installa las dependencias: `npm install`
+3. Inicia el servidor: `npm start`
 
 ### Frontend
 Para ejecutar la aplicación React, sigue estos pasos:
 1. Navega al directorio del frontend: `cd frontend-zara`
-2. Inicia la aplicación: `npm start`
+2. Installa las dependencias: `npm install`
+3. Inicia la aplicación: `npm start`
