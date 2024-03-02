@@ -1,0 +1,16 @@
+{
+  "name": "zara-web-challenge",
+  "version": "1.0.0",
+  "description": "Proyecto de aplicación web para obtener información sobre personajes de Marvel",
+  "scripts": {
+    "start": "node backend/server.js",
+    "start:dev": "nodemon backend/server.js",
+    "client": "cd frontend && npm start",
+    "client:build": "cd frontend && npm run build",
+    "dev": "concurrently \"npm run start:dev\" \"npm run client\"",
+    "build": "npm run client:build"
+  },
+
+  "author": "Daniel Barceló",
+  "license": "MIT"
+}
