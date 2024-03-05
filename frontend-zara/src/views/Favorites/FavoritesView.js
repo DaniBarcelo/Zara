@@ -1,42 +1,45 @@
 import SearchComponent from "../../components/SearchComponent";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { FavoriteContext } from "../../context/AppContext";
 import './FavoritesView.css';
-import { characterCard } from "../../components/CharacterCard";
+import { CharacterCard } from "../../components/CharacterCard";
+import Header from "../../components/Header";
+import { useState } from "react";
+
 
 export default function FavoritesView() {
 
-    const { favorites, setFavorites } = useContext(FavoriteContext);
-
-    const clickFavorites = (character) => {
-        if (favorites.find(favorite => favorite.id === character.id)) {
-            setFavorites(favorites.filter(favorite => favorite.id !== character.id));
-        } else {
-            setFavorites([...favorites, character]);
-        }
-    }
+    const { favorites } = useContext(FavoriteContext);
+    const [search, setSearch] = useState("");
 
     return (
-        <div id="wrapper">
-            <SearchComponent />
-            <p>{favorites.length} RESULTS </p>
-            <div>
-                {favorites.map((character, characterIndex) => {
-                    return (
-                        <div
-                            key={character.id}
-                            style={{
-                                display: "inline",
-                                flexDirection: "column",
-                                alignItems: "center",
-                                justifyContent: "space-between",
-                            }}
-                        >
-                            {characterCard(character, favorites, clickFavorites)}
-                        </div>
-                    );
-                })}
+        <>
+            <Header />
+            <div id="wrapper">
+                <p id="favoritesTitle" >FAVORITES</p>
+                <SearchComponent setSearch={setSearch} />
+                <p>{favorites.filter(favorite => favorite.name.toUpperCase().includes(search.toUpperCase())).length} RESULTS </p>
+                <div>
+                    {favorites.map((character) => {
+                        if (search !== "" && !character.name.toUpperCase().includes(search.toUpperCase())) {
+                            return null;
+                        }
+                        return (
+                            <div
+                                key={character.id}
+                                style={{
+                                    display: "inline",
+                                    flexDirection: "column",
+                                    alignItems: "center",
+                                    justifyContent: "space-between",
+                                }}
+                            >
+                                {<CharacterCard character={character} />}
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
-        </div>
+        </>
     );
 }

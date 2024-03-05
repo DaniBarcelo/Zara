@@ -32,3 +32,9 @@ Para ejecutar la aplicación React, sigue estos pasos:
 1. Navega al directorio del frontend: `cd frontend-zara`
 2. Installa las dependencias: `npm install`
 3. Inicia la aplicación: `npm start`
+
+## Notas
+
+1. La API de marvel para el filtrado de nombres, solo permite el filtrado por nombre completo o por comienzo de string. Para la búsqueda en la pantalla de inicio, se ha usado este parámetro de la API. Al haber guardado la información de los personajes favoritos en el contexto de la aplicación, en la búsqueda de la pantalla de favoritos, se permite la búsqueda por contención de nombre, ya que esta búsqueda se hace de forma local y no depende de la API
+2. Para el formateo de código se ha utilizado el formateo automático integrado en el IDE VSCode
+3. Ante la falta del recurso del "corazón relleno blanco" a la hora de hacer "hover" sobre una tarjeta de personaje, si el personaje está marcado como favorito, el corazón se vuelve "invisible"

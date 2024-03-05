@@ -13,3 +13,11 @@
         padding: 50px 50px 25px 50px;
     }
   }
+
+  #favoritesTitle {
+    color: black;
+    font-size: 32px;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    line-height: 37.5px;
+  }

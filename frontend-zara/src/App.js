@@ -1,16 +1,21 @@
 import './App.css';
-import Router from './infraestructure/Router';
+import MyRouter from './infraestructure/Router';
 import { useState } from 'react';
-import { FavoriteContext } from './context/AppContext';
+import { FavoriteContext, SelectedCharacterContext } from './context/AppContext';
 
 function App() {
 
   const [favorites, setFavorites] = useState([]);
-  const value = { favorites, setFavorites };
+  const valueFavorites = { favorites, setFavorites };
+
+  const [character, setCharacter] = useState({});
+  const valueCharacter = { character, setCharacter };
 
   return (
-    <FavoriteContext.Provider value={value}>
-      <Router />
+    <FavoriteContext.Provider value={valueFavorites}>
+      <SelectedCharacterContext.Provider value={valueCharacter}>
+        <MyRouter />
+      </SelectedCharacterContext.Provider>
     </FavoriteContext.Provider>
   );
 }

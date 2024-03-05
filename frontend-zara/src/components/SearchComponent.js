@@ -1,6 +1,6 @@
 import Search from "../assets/search.png";
 
-const SearchComponent = () => {
+const SearchComponent = ({ setSearch }) => {
     return (
         <div
             style={{
@@ -9,7 +9,8 @@ const SearchComponent = () => {
         >
             <input
                 type="text"
-                placeholder="SEARCH A CHARACTER"
+                placeholder="SEARCH A CHARACTER..."
+                onChange={(e) => { setSearch(e.target.value) }}
                 style={{
                     width: "97%",
                     height: "50px",
@@ -22,6 +23,7 @@ const SearchComponent = () => {
                     paddingLeft: "50px",
                     outline: "none",
                 }}
+
             />
         </div>
     )
