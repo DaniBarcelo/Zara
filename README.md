@@ -33,6 +33,11 @@ Para ejecutar la aplicación React, sigue estos pasos:
 2. Installa las dependencias: `npm install`
 3. Inicia la aplicación: `npm start`
 
+### Versión de producción minimizada
+Para obtener una versión de produccion minimizada:
+1. Navega al directorio del frontend: `cd frontend-zara`
+2. Construye la aplicación: `npm run build`
+
 ## Notas
 
 1. La API de marvel para el filtrado de nombres, solo permite el filtrado por nombre completo o por comienzo de string. Para la búsqueda en la pantalla de inicio, se ha usado este parámetro de la API. Al haber guardado la información de los personajes favoritos en el contexto de la aplicación, en la búsqueda de la pantalla de favoritos, se permite la búsqueda por contención de nombre, ya que esta búsqueda se hace de forma local y no depende de la API
