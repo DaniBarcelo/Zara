@@ -17,7 +17,7 @@ exports.getCharacters = async (req, res) => {
         res.json(result.data.data.results);
     } catch (error) {
         res.status(500)
-        res.json({ error, message: `Unable to fetch characters on ${req.route.path}` })
+        res.json({ error, message: `Unable to fetch characters` })
     }
 }
 
@@ -35,6 +35,6 @@ exports.getComics = async (req, res) => {
         res.json(result.data.data.results);
     } catch (error) {
         res.status(500)
-        res.json({ error, message: `Unable to fetch comics on ${req.route.path}` })
+        res.json({ error, message: `Unable to fetch comics` })
     }
 }
